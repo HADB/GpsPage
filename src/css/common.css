@@ -184,6 +184,27 @@ body {
     padding-left: 320px;
 }
 
+.main .right-area .refresh-tips {
+    position: absolute;
+    margin-left: 80px;
+    margin-top: 70px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 0 15px;
+    z-index: 1;
+    line-height: 30px;
+    height: 32px;
+    box-shadow: 1px 1px 3px #888;
+    font-size: 12px;
+}
+
+.main .right-area .refresh-tips span {
+    color: #f29a5a;
+    font-size: 14px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
 .main .right-area .option-bar-container {
     position: absolute;
     top: 0;
