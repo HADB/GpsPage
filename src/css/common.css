@@ -8,6 +8,8 @@ body {
 }
 
 .header {
+    z-index: 1;
+    position: relative;
     height: 100px;
     padding: 25px;
     background: #3e5d86 url('../img/header-bg.png') no-repeat center;
@@ -16,6 +18,24 @@ body {
 
 .header .logo {
     height: 50px;
+}
+
+.header .user {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 16px;
+}
+
+.header .user a, .header .user span {
+    color: #fff;
+    margin: 0 10px;
+}
+
+.header .user .avatar {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
 }
 
 .navbar {
@@ -53,12 +73,13 @@ body {
 }
 
 .main .left-area {
+    position: absolute;
+    left: 0;
     width: 300px;
-    float: left;
     margin-left: 10px;
-    height: 100%;
     border: 1px solid #ededed;
     border-radius: 4px;
+    z-index: 1;
 }
 
 .main .left-area .title {
@@ -105,11 +126,79 @@ body {
 }
 
 .main .right-area {
+    position: relative;
     width: 100%;
     height: 100%;
     padding-left: 320px;
 }
 
+.main .right-area .option-bar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 15px 15px 335px;
+    z-index: 1;
+}
+
+.main .right-area .option-bar {
+    width: 100%;
+    height: 42px;
+    border: 1px solid #ededed;
+    background: #fff;
+    line-height: 40px;
+    padding: 0 15px;
+    box-shadow: 1px 1px 3px #888;
+}
+
+.main .right-area .option-bar .options {
+    float: right;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.main .right-area .option-bar .options div {
+    margin-left: 15px;
+}
+
+.main .right-area .option-bar .map-selection button {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 0;
+}
+
+#map-container {
+    width: 100%;
+    height: 100%;
+}
+
 .custom-scrollbar {
     position: relative;
 }
+
+.checkbox .checkbox-img {
+    display: inline-block;
+    width: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../img/checkbox-unchecked.png');
+}
+
+.checkbox .checkbox-img:hover {
+    background-image: url('../img/checkbox-unchecked-hover.png');
+}
+
+.checkbox.checked .checkbox-img {
+    background-image: url('../img/checkbox-checked.png');
+}
+
+.checkbox.checked .checkbox-img:hover {
+    background-image: url('../img/checkbox-checked-hover.png');
+}
+
+
