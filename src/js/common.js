@@ -65,7 +65,7 @@ $(function () {
         $guest.addClass('active');
         if ($guest.hasClass('expanded')) {
             $guest.removeClass('expanded');
-            $guest.children('.children').slideUp(300, function () {
+            $guest.children('.children').slideUp(200, function () {
                 $guest.find('.guest').hide();
                 $guest.find('.guest').removeClass('expanded');
             });
@@ -73,9 +73,9 @@ $(function () {
         else {
             $guest.addClass('expanded');
             $guest.siblings('.guest').removeClass('expanded');
-            $guest.siblings('.guest').find('.children').slideUp(300);
+            $guest.siblings('.guest').find('.children').slideUp(200);
             $guest.children('.children').children('.guest').show();
-            $guest.children('.children').slideDown(300);
+            $guest.children('.children').slideDown(200);
         }
     });
 
@@ -84,19 +84,23 @@ $(function () {
         if ($group.hasClass('expanded')) {
             $group.removeClass('expanded');
             $group.find('.user').removeClass('active');
-            $group.find('.users').slideUp(300);
+            $group.find('.users').slideUp(200);
         }
         else {
             $group.addClass('expanded');
             $group.siblings('.group').find('.user').removeClass('active');
-            $group.siblings('.group').find('.users').slideUp(300);
+            $group.siblings('.group').find('.users').slideUp(200);
             $group.siblings('.group').removeClass('expanded');
-            $group.find('.users').slideDown(300);
+            $group.find('.users').slideDown(200);
         }
     });
 
     $('.search-bar input').focus(function () {
-        $(this).siblings('.dropdown').show();
+        $(this).siblings('.dropdown').slideDown(200);
+    });
+
+    $('.search-bar input').blur(function () {
+        $(this).siblings('.dropdown').slideUp(200);
     });
 
     $('.search-result').hover(function () {
@@ -106,6 +110,5 @@ $(function () {
     $('.search-result').click(function () {
         var result = $(this).html();
         $(this).parents('.search-bar').find('input').val(result);
-        $(this).parents('.dropdown').hide();
     });
 });
