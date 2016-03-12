@@ -7,6 +7,8 @@
     <title>天易位置监控系统</title>
     <meta name="viewport" content="initial-scale=1, user-scalable=no">
     <link href="third-party/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="third-party/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="third-party/perfect-scrollbar/0.6.10/css/perfect-scrollbar.min.css" rel="stylesheet">
     <link href="css/common.css" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +18,70 @@
         <div class="user pull-right">
         </div>
     </div>
+    <div class="navbar">
+        <ul class="nav navbar-nav">
+            <li>账户管理</li>
+            <li class="active">定位监控</li>
+            <li>报表统计</li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="left-area">
+            <div class="title">客户列表</div>
+            <div class="guest-list custom-scrollbar">
+                <div class="guest has-children">
+                    <div class="tree-icon closed"></div>
+                    <div class="guest-name">根客户(5/5)</div>
+                    <div class="guest has-children">
+                        <div class="tree-icon closed"></div>
+                        <div class="guest-name">测试客户001(1/1)</div>
+                        <div class="guest">
+                            <div class="tree-icon closed"></div>
+                            <div class="guest-name">测试客户a(0/0)</div>
+                        </div>
+                    </div>
+                    <div class="guest has-children">
+                        <div class="tree-icon closed"></div>
+                        <div class="guest-name">测试客户002(1/1)</div>
+                        <div class="guest">
+                            <div class="tree-icon closed"></div>
+                            <div class="guest-name">测试客户a(0/0)</div>
+                        </div>
+                    </div>
+                    <div class="guest has-children">
+                        <div class="tree-icon closed"></div>
+                        <div class="guest-name">测试客户003(1/1)</div>
+                        <div class="guest">
+                            <div class="tree-icon closed"></div>
+                            <div class="guest-name">测试客户a(0/0)</div>
+                        </div>
+                    </div>
+                    <div class="guest has-children">
+                        <div class="tree-icon closed"></div>
+                        <div class="guest-name">测试客户004(1/1)</div>
+                        <div class="guest">
+                            <div class="tree-icon closed"></div>
+                            <div class="guest-name">测试客户a(0/0)</div>
+                        </div>
+                    </div>
+                    <div class="guest has-children">
+                        <div class="tree-icon closed"></div>
+                        <div class="guest-name">测试客户005(1/1)</div>
+                        <div class="guest">
+                            <div class="tree-icon closed"></div>
+                            <div class="guest-name">测试客户a(0/0)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-area">
+            <dic class="option-bar"></dic>
+            <div id="map-container"></div>
+        </div>
+    </div>
     <script src="third-party/jquery/2.2.1/jquery-2.2.1.min.js"></script>
+    <script src="third-party/perfect-scrollbar/0.6.10/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="js/common.js"></script>
 </body>
 </html>
