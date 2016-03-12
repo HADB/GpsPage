@@ -65,7 +65,7 @@ $(function () {
         $guest.addClass('active');
         if ($guest.hasClass('expanded')) {
             $guest.removeClass('expanded');
-            $guest.children('.children').slideUp(500, function () {
+            $guest.children('.children').slideUp(300, function () {
                 $guest.find('.guest').hide();
                 $guest.find('.guest').removeClass('expanded');
             });
@@ -73,9 +73,9 @@ $(function () {
         else {
             $guest.addClass('expanded');
             $guest.siblings('.guest').removeClass('expanded');
-            $guest.siblings('.guest').find('.children').slideUp(500);
+            $guest.siblings('.guest').find('.children').slideUp(300);
             $guest.children('.children').children('.guest').show();
-            $guest.children('.children').slideDown(500);
+            $guest.children('.children').slideDown(300);
         }
     });
 
@@ -84,14 +84,14 @@ $(function () {
         if ($group.hasClass('expanded')) {
             $group.removeClass('expanded');
             $group.find('.user').removeClass('active');
-            $group.find('.users').slideUp(500);
+            $group.find('.users').slideUp(300);
         }
         else {
             $group.addClass('expanded');
             $group.siblings('.group').find('.user').removeClass('active');
-            $group.siblings('.group').find('.users').slideUp(500);
+            $group.siblings('.group').find('.users').slideUp(300);
             $group.siblings('.group').removeClass('expanded');
-            $group.find('.users').slideDown(500);
+            $group.find('.users').slideDown(300);
         }
     });
 

@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     height: 100%;
     color: #555;
     background-color: #e7eef4;
@@ -55,6 +55,7 @@ a:hover {
     display: inline-block;
     color: #3e5d86;
     position: relative;
+    font-size: 12px;
 }
 
 .search-bar input {
@@ -142,12 +143,29 @@ a:hover {
     position: absolute;
     bottom: 15px;
     right: 15px;
-    font-size: 16px;
+    font-size: 12px;
 }
 
-.header .user a, .header .user span {
-    color: #fff;
+.header .user .avatar {
+    margin-right: 10px;
+}
+
+.header .user a {
+    color: #798fac;
     margin: 0 10px;
+}
+
+.header .user a:hover {
+    color: #fff !important;
+}
+
+.header .user span {
+    color: #798fac;
+}
+
+.header .user span.user-name {
+    color: #fff;
+    margin: 0 10px 0 0;
 }
 
 .header .user .avatar {
@@ -199,6 +217,7 @@ a:hover {
     line-height: 32px;
     color: #fff;
     background-color: #3e5d86;
+    font-size: 12px;
 }
 
 .navbar .search-area .btn.btn-left {
