@@ -18,6 +18,34 @@ a:hover {
     margin-top: 300px;
 }
 
+.BMap_Marker img {
+    width: 50px;
+}
+
+.BMap_pop img[src='http://api0.map.bdimg.com/images/iw_close1d3.gif'] {
+    margin-top: 6px;
+}
+
+.BMap_bubble_title h5.title {
+    margin-top: 0;
+    border-bottom: 1px solid #ededed;
+    padding-bottom: 5px;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.info-content {
+    margin-top: 0px;
+}
+
+.info-content h5 span {
+    font-weight: bold;
+}
+
+.info-content a {
+    margin-right: 10px;
+}
+
 .search-bar {
     height: 32px;
     border: 1px solid #ededed;
@@ -145,6 +173,7 @@ a:hover {
     border-right: 1px solid #ededed;
     font-size: 16px;
     color: #acacac;
+    cursor: pointer;
 }
 
 .navbar .nav li.active {
