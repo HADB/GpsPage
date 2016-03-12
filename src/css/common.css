@@ -1,0 +1,10 @@
+.header {
+    height: 100px;
+    padding: 25px;
+    background-color: #3e5d86;
+    background-image: url('../img/header-bg.png');
+}
+
+.header .logo {
+    height: 50px;
+}
