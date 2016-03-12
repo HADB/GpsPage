@@ -49,14 +49,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
     float: left;
     margin-left: -12px;
-    line-height: 30px;
+    line-height: 40px;
 }
 
 .tree-icon:before {
     content: "\f0da";
 }
 
-.expanded .tree-icon:before {
+.expanded > .tree-icon:before {
     content: "\f0d7";
 }
 
@@ -184,11 +184,31 @@ body {
     overflow: auto;
 }
 
-.main .left-area .guest-list .guest .guest-name {
-    padding: 5px 0;
+.main .left-area .guest-list .guest {
+    cursor: pointer;
+    position: relative;
 }
 
-.main .left-area .guest-list .guest > .guest {
+.main .left-area .guest-list .guest.active > .guest-name, .main .left-area .guest-list .guest.active > .tree-icon {
+    color: #fff;
+}
+
+.main .left-area .guest-list .guest.active > .background {
+    background-color: #5c7fab;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 600px;
+    height: 40px;
+    z-index: -1;
+    margin-left: -300px;
+}
+
+.main .left-area .guest-list .guest .guest-name {
+    padding: 10px 0;
+}
+
+.main .left-area .guest-list .children > .guest {
     margin-left: 1em;
 }
 
@@ -247,13 +267,12 @@ body {
 }
 
 .main .left-area .group-area .groups .group-name {
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 .main .left-area .group-area .groups .group .users .user {
     position: relative;
     padding: 10px 0;
-    cursor: pointer;
 }
 
 .main .left-area .group-area .groups .group .users .user a {
