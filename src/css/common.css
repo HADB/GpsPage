@@ -104,6 +104,7 @@ body {
 .navbar .search-area .search-bar input {
     border: none;
     line-height: 26px;
+    height: 26px;
     margin: 0;
     width: 200px;
     padding: 0 5px;
