@@ -14,7 +14,7 @@ a:hover {
     color: #83D0FF !important;
 }
 
-.modal-dialog{
+.modal-dialog {
     margin-top: 300px;
 }
 
@@ -47,6 +47,34 @@ a:hover {
     position: absolute;
     right: 15px;
     top: 7px;
+}
+
+.search-bar .dropdown {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2px 12px;
+    z-index: 1;
+}
+
+.search-bar .dropdown .search-results {
+    background-color: #fff;
+    border: 1px solid #ededed;
+    box-shadow: 2px 2px 2px #888;
+}
+
+.search-bar .dropdown .search-results .search-result {
+    padding: 5px 15px;
+    border-bottom: 1px solid #ededed;
+    cursor: pointer;
+}
+
+.search-bar .dropdown .search-results .search-result:last-of-type {
+    border-bottom: none;
+}
+
+.search-bar .dropdown .search-results .search-result:hover {
+    background-color: #eee;
 }
 
 .tree-icon {
@@ -103,7 +131,7 @@ a:hover {
 .navbar {
     border-top: none;
     border-bottom: 1px solid #ededed;
-    z-index: 1;
+    z-index: 2;
     background-color: #fff;
 }
 
@@ -334,7 +362,7 @@ a:hover {
     z-index: 1;
     line-height: 30px;
     height: 32px;
-    box-shadow: 1px 1px 3px #888;
+    box-shadow: 2px 2px 2px #888;
     font-size: 12px;
 }
 
@@ -349,7 +377,7 @@ a:hover {
     position: absolute;
     padding: 0 15px;
     z-index: 1;
-    box-shadow: 1px 1px 3px #888;
+    box-shadow: 2px 2px 2px #888;
     bottom: 15px;
     right: 15px;
     background-color: #5c7fab;
@@ -373,7 +401,7 @@ a:hover {
     background: #fff;
     line-height: 40px;
     padding: 0 15px;
-    box-shadow: 1px 1px 3px #888;
+    box-shadow: 2px 2px 2px #888;
 }
 
 .main .right-area .option-bar .options {

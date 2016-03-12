@@ -64,4 +64,18 @@ $(function () {
             $group.find('.users').slideDown(500);
         }
     });
+
+    $('.search-bar input').focus(function () {
+        $(this).siblings('.dropdown').show();
+    });
+
+    $('.search-result').hover(function () {
+        $(this).addClass('active');
+    });
+
+    $('.search-result').click(function () {
+        var result = $(this).html();
+        $(this).parents('.search-bar').find('input').val(result);
+        $(this).parents('.dropdown').hide();
+    });
 });
