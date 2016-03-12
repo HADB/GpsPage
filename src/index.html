@@ -237,6 +237,7 @@
         </div>
         <div class="right-area">
             <div class="refresh-tips"><span>4</span>秒后刷新</div>
+            <div class="btn btn-notice" data-toggle="modal" data-target="#notice-modal">报警信息</div>
             <div class="option-bar-container">
                 <div class="option-bar">
                     <span class="info">浙D2750P石易新面包：上海市宝山区呼兰西路。离上海智力产业园（正北）约119米。</span>
@@ -269,6 +270,23 @@
                 </div>
             </div>
             <div id="map-container"></div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="notice-modal" tabindex="-1" role="dialog" aria-labelledby="notice-mobile-title">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="notice-mobile-title">报警信息</h4>
+                </div>
+                <div class="modal-body">
+                    没有报警信息
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="third-party/jquery/2.2.1/jquery-2.2.1.min.js"></script>
