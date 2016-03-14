@@ -43,8 +43,8 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-left" type="button">搜设备</button>
-            <button class="btn btn-right" type="button">搜客户</button>
+            <button class="btn btn-left search-device-btn" type="button">搜设备</button>
+            <button class="btn btn-right search-customer-btn" type="button">搜客户</button>
         </div>
     </div>
     <div class="main">
@@ -147,12 +147,13 @@
                 </div>
                 <div class="add-group-area">
                     <a class="add-group-btn" href="javascript:void(0);">+添加组</a>
+
                     <div class="form-inline" style="display:none;">
                         <div class="form-group">
                             <label class="sr-only" for="group-name">组名</label>
                             <input type="email" class="form-control" id="group-name" placeholder="请输入组名">
                         </div>
-                        <button type="button" class="btn btn-default btn-ok">确定</button>
+                        <button type="button" class="btn btn-primary btn-ok">确定</button>
                         <button type="button" class="btn btn-default btn-cancel">取消</button>
                     </div>
                 </div>
@@ -331,6 +332,160 @@
                 <div class="modal-body"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="device-search-modal" tabindex="-1" role="dialog" aria-labelledby="device-search-modal-title">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="device-search-modal-title">设备搜索</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="device-no">设备号(IMEI)</label>
+                            <input type="text" class="form-control" id="device-no" placeholder="请输入设备号">
+                        </div>
+                        <button type="submit" class="btn btn-primary">搜索</button>
+                    </div>
+                    <table class="table table-striped">
+                        <thread>
+                            <tr>
+                                <th>设备号(IMEI)</th>
+                                <th>设备电话(SIM卡)</th>
+                                <th>名称</th>
+                                <th>型号</th>
+                                <th>导入时间</th>
+                                <th>开通时间</th>
+                                <th>到期时间</th>
+                                <th>操作</th>
+                            </tr>
+                        </thread>
+                        <tbody>
+                            <tr>
+                                <td>352544070784252</td>
+                                <td>18710224151</td>
+                                <td>TY01-784252</td>
+                                <td>TY01</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>查看</td>
+                            </tr>
+                            <tr>
+                                <td>352544070784252</td>
+                                <td>18710224151</td>
+                                <td>TY01-784252</td>
+                                <td>TY01</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>查看</td>
+                            </tr>
+                            <tr>
+                                <td>352544070784252</td>
+                                <td>18710224151</td>
+                                <td>TY01-784252</td>
+                                <td>TY01</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>查看</td>
+                            </tr>
+                            <tr>
+                                <td>352544070784252</td>
+                                <td>18710224151</td>
+                                <td>TY01-784252</td>
+                                <td>TY01</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>查看</td>
+                            </tr>
+                            <tr>
+                                <td>352544070784252</td>
+                                <td>18710224151</td>
+                                <td>TY01-784252</td>
+                                <td>TY01</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>2016-03-09 01:07:24</td>
+                                <td>查看</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="customer-search-modal" tabindex="-1" role="dialog" aria-labelledby="device-search-modal-title">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="customer-search-modal-title">客户搜索</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="customer-no">客户名/账号</label>
+                            <input type="text" class="form-control" id="customer-no" placeholder="请输入客户名/账号">
+                        </div>
+                        <button type="submit" class="btn btn-primary">搜索</button>
+                    </div>
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="#">客户关系</a></li>
+                        <li role="presentation"><a href="#">客户详情</a></li>
+                        <li role="presentation"><a href="#">新增</a></li>
+                        <li role="presentation"><a href="#">转移</a></li>
+                        <li role="presentation"><a href="#">销售</a></li>
+                    </ul>
+                    <table class="table table-striped">
+                        <thread>
+                            <tr>
+                                <th>客户名称</th>
+                                <th>账号</th>
+                                <th>类型</th>
+                                <th>联系人</th>
+                                <th>电话</th>
+                            </tr>
+                        </thread>
+                        <tbody>
+                            <tr>
+                                <td>天易客户1</td>
+                                <td>admin</td>
+                                <td>管理员</td>
+                                <td>12121212</td>
+                                <td>12345678987</td>
+                            </tr>
+                            <tr>
+                                <td>天易客户2</td>
+                                <td>admin</td>
+                                <td>管理员</td>
+                                <td>12121212</td>
+                                <td>12345678987</td>
+                            </tr>
+                            <tr>
+                                <td>天易客户3</td>
+                                <td>admin</td>
+                                <td>管理员</td>
+                                <td>12121212</td>
+                                <td>12345678987</td>
+                            </tr>
+                            <tr>
+                                <td>天易客户4</td>
+                                <td>admin</td>
+                                <td>管理员</td>
+                                <td>12121212</td>
+                                <td>12345678987</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

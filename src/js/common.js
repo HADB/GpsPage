@@ -125,4 +125,12 @@ $(function () {
         $('#message-modal').modal();
         $('.add-group-area .form-inline').hide();
     });
+
+    $('.search-device-btn').click(function () {
+        $("#device-search-modal").modal();
+    });
+
+    $('.search-customer-btn').click(function () {
+        $("#customer-search-modal").modal();
+    });
 });

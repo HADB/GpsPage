@@ -19,6 +19,20 @@ a:hover {
     margin-top: 300px;
 }
 
+.modal-body .table {
+    font-size: 12px;
+}
+
+.modal-body .form-inline {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #5c7fab;
+    border-color: #5c7fab;
+}
+
 .BMap_Marker img {
     width: 50px;
 }
@@ -344,12 +358,6 @@ a:hover {
 
 .main .left-area .group-area .add-group-area input {
     width: 150px;
-}
-
-.main .left-area .group-area .add-group-area .btn-ok {
-    color: #fff;
-    background-color: #5c7fab;
-    border-color: #5c7fab;
 }
 
 .main .left-area .group-area .group-tag {
