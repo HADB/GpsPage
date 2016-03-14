@@ -65,7 +65,7 @@ $(function () {
         $guest.addClass('active');
         if ($guest.hasClass('expanded')) {
             $guest.removeClass('expanded');
-            $guest.children('.children').slideUp(200, function () {
+            $guest.children('.children').slideUp(150, function () {
                 $guest.find('.guest').hide();
                 $guest.find('.guest').removeClass('expanded');
             });
@@ -73,9 +73,9 @@ $(function () {
         else {
             $guest.addClass('expanded');
             $guest.siblings('.guest').removeClass('expanded');
-            $guest.siblings('.guest').find('.children').slideUp(200);
+            $guest.siblings('.guest').find('.children').slideUp(150);
             $guest.children('.children').children('.guest').show();
-            $guest.children('.children').slideDown(200);
+            $guest.children('.children').slideDown(150);
         }
     });
 
@@ -84,23 +84,25 @@ $(function () {
         if ($group.hasClass('expanded')) {
             $group.removeClass('expanded');
             $group.find('.user').removeClass('active');
-            $group.find('.users').slideUp(200);
+            $group.find('.users').slideUp(150);
         }
         else {
             $group.addClass('expanded');
             $group.siblings('.group').find('.user').removeClass('active');
-            $group.siblings('.group').find('.users').slideUp(200);
+            $group.siblings('.group').find('.users').slideUp(150);
             $group.siblings('.group').removeClass('expanded');
-            $group.find('.users').slideDown(200);
+            $group.find('.users').slideDown(150);
         }
     });
 
     $('.search-bar input').focus(function () {
-        $(this).siblings('.dropdown').slideDown(200);
+        $(this).siblings('.dropdown').slideDown(150);
+        $(this).parent().addClass('active');
     });
 
     $('.search-bar input').blur(function () {
-        $(this).siblings('.dropdown').slideUp(200);
+        $(this).siblings('.dropdown').slideUp(150);
+        $(this).parent().removeClass('active');
     });
 
     $('.search-result').hover(function () {
