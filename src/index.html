@@ -145,8 +145,16 @@
                     <span class="group-tag">在线(12)</span>
                     <span class="group-tag">离线(83)</span>
                 </div>
-                <div class="text-right">
-                    <a class="add-group" href="javascript:void(0);">+添加组</a>
+                <div class="add-group-area">
+                    <a class="add-group-btn" href="javascript:void(0);">+添加组</a>
+                    <div class="form-inline" style="display:none;">
+                        <div class="form-group">
+                            <label class="sr-only" for="group-name">组名</label>
+                            <input type="email" class="form-control" id="group-name" placeholder="请输入组名">
+                        </div>
+                        <button type="button" class="btn btn-default btn-ok">确定</button>
+                        <button type="button" class="btn btn-default btn-cancel">取消</button>
+                    </div>
                 </div>
                 <div class="groups custom-scrollbar">
                     <div class="group">
@@ -296,12 +304,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="notice-modal" tabindex="-1" role="dialog" aria-labelledby="notice-mobile-title">
+    <div class="modal fade" id="notice-modal" tabindex="-1" role="dialog" aria-labelledby="notice-modal-title">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="notice-mobile-title">报警信息</h4>
+                    <h4 class="modal-title" id="notice-modal-title">报警信息</h4>
                 </div>
                 <div class="modal-body">
                     没有报警信息
@@ -312,6 +320,22 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="message-modal" tabindex="-1" role="dialog" aria-labelledby="message-modal-title">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="message-modal-title"><i class="fa fa-info-circle"></i>提示</h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript" src="third-party/jquery/2.2.1/jquery-2.2.1.min.js"></script>
     <script type="text/javascript" src="third-party/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="third-party/perfect-scrollbar/0.6.10/js/perfect-scrollbar.jquery.min.js"></script>

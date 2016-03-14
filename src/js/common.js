@@ -111,4 +111,18 @@ $(function () {
         var result = $(this).html();
         $(this).parents('.search-bar').find('input').val(result);
     });
+
+    $('.add-group-area .add-group-btn').click(function () {
+        $('.add-group-area .form-inline').show();
+    });
+
+    $('.add-group-area .btn-cancel').click(function () {
+        $('.add-group-area .form-inline').hide();
+    });
+
+    $('.add-group-area .btn-ok').click(function () {
+        $('#message-modal .modal-body').html('添加成功！');
+        $('#message-modal').modal();
+        $('.add-group-area .form-inline').hide();
+    });
 });
