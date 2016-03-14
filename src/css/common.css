@@ -7,6 +7,7 @@ body {
     height: 100%;
     color: #555;
     background-color: #e7eef4;
+    min-width: 1280px;
 }
 
 a:hover {
@@ -183,6 +184,7 @@ a:hover {
 
 .navbar .nav {
     line-height: 75px;
+    float: left;
 }
 
 .navbar .nav li {
@@ -192,6 +194,7 @@ a:hover {
     font-size: 16px;
     color: #acacac;
     cursor: pointer;
+    float: left;
 }
 
 .navbar .nav li.active {
@@ -450,16 +453,20 @@ a:hover {
     line-height: 40px;
     padding: 0 15px;
     box-shadow: 2px 2px 2px #888;
+    position: relative;
 }
 
 .main .right-area .option-bar .options {
-    float: right;
+    position: absolute;
+    right: 15px;
+    top: 0;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    background-color: #fff;
 }
 
 .main .right-area .option-bar .options div {
