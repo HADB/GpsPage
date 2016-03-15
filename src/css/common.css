@@ -171,6 +171,19 @@ a:hover {
     height: 45px;
 }
 
+.header .nick-name {
+    display: inline-block;
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 20px;
+    line-height: 25px;
+    height: 25px;
+    padding-left: 15px;
+    border-left: 1px solid #587295;
+    margin-top: 25px;
+}
+
 .header .user {
     position: absolute;
     bottom: 15px;
