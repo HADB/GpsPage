@@ -59,7 +59,7 @@ $(function () {
         $(this).addClass('active');
     });
 
-    $('.guest-name').click(function () {
+    $('.guest-list .guest-name,.guest-list .tree-icon').on('click', function () {
         var $guest = $(this).parent();
         $('.guest-list .guest').removeClass('active');
         $guest.addClass('active');
@@ -79,7 +79,7 @@ $(function () {
         }
     });
 
-    $('.group-name').click(function () {
+    $('.groups .group-name,.groups .tree-icon').on('click', function () {
         var $group = $(this).parent();
         if ($group.hasClass('expanded')) {
             $group.removeClass('expanded');
