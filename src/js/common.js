@@ -135,4 +135,23 @@ $(function () {
     $('.search-customer-btn').click(function () {
         $("#customer-search-modal").modal();
     });
+
+    $('.hide-left').click(function () {
+        if ($(this).find('i').hasClass('fa-angle-left')) {
+            $('.left-area').animate({left: '-300px'}, 100);
+            $('.right-area').animate({'padding-left': '15px'}, 100);
+            $('.hide-left').animate({'left': '5px'}, 100);
+            $('.option-bar-container').animate({'padding-left': '30px'}, 100);
+            $(this).find('i').addClass('fa-angle-right');
+            $(this).find('i').removeClass('fa-angle-left');
+        }
+        else {
+            $('.left-area').animate({left: '0'}, 100);
+            $('.right-area').animate({'padding-left': '320px'}, 100);
+            $('.hide-left').animate({'left': '310px'}, 100);
+            $('.option-bar-container').animate({'padding-left': '335px'}, 100);
+            $(this).find('i').addClass('fa-angle-left');
+            $(this).find('i').removeClass('fa-angle-right');
+        }
+    });
 });
