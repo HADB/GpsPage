@@ -374,7 +374,7 @@ a:hover {
 
 .main .left-area .group-area .group-tag {
     background-color: #fff;
-    border: 1px solid #5c7fab;
+    border: 1px solid #fff;
     height: 30px;
     border-radius: 15px;
     display: inline-block;
@@ -382,6 +382,10 @@ a:hover {
     padding: 0 15px;
     margin: 5px 0;
     cursor: pointer;
+}
+
+.main .left-area .group-area .group-tag:hover {
+    border: 1px solid #5c7fab;
 }
 
 .main .left-area .group-area .group-tag.active {
