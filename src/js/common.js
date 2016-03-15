@@ -154,4 +154,7 @@ $(function () {
             $(this).find('i').removeClass('fa-angle-right');
         }
     });
+
+    var height = $('body').height();
+    $('.left-area').height(height - 140);
 });
