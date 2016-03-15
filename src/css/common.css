@@ -10,6 +10,33 @@ body {
     min-width: 1280px;
 }
 
+.close {
+    opacity: 1;
+}
+
+.close-img {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../img/close.png") no-repeat center;
+}
+
+.table-striped > thead > tr {
+    background-color: #f2f5f9;
+}
+
+.table-striped > thead > tr > th {
+    border-bottom-width: 1px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #f9fafa;
+}
+
 a:hover {
     text-decoration: none;
     color: #83D0FF !important;
@@ -27,10 +54,29 @@ a:hover {
     margin-bottom: 15px;
 }
 
+.modal-body .form-inline label {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.modal-body .form-inline input {
+    border-radius: 16px;
+    height: 32px;
+    font-size: 12px;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #5c7fab;
     border-color: #5c7fab;
+    border-radius: 16px;
+    height: 32px;
+    padding: 0 20px;
+    line-height: 30px;
+}
+
+button:focus, button:active {
+    outline: none !important;
 }
 
 .btn-cancel {
