@@ -33,6 +33,18 @@ a:hover {
     border-color: #5c7fab;
 }
 
+.btn-cancel {
+    color: #fff;
+    background-color: #949596;
+    border-color: #949596;
+}
+
+.btn-cancel:hover {
+    color: #fff;
+    background-color: #abacad;
+    border-color: #abacad;
+}
+
 .BMap_Marker img {
     width: 50px;
 }
@@ -117,10 +129,11 @@ a:hover {
 
 .search-bar .dropdown .search-results {
     background-color: #fff;
-    border: 1px solid #ededed;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    border-radius: 4px;
+    border-radius: 2px;
     margin-top: 5px;
 }
 
@@ -236,7 +249,7 @@ a:hover {
     text-align: center;
     border-right: 1px solid #ededed;
     font-size: 16px;
-    color: #acacac;
+    color: #888;
     cursor: pointer;
     float: left;
 }
@@ -258,26 +271,38 @@ a:hover {
     margin-right: 20px;
 }
 
-.navbar .search-area .btn {
+.navbar .search-area button {
     display: inline-block;
-    height: 32px;
-    line-height: 32px;
+    height: 18px;
+    line-height: 18px;
     color: #fff;
-    background-color: #3e5d86;
     font-size: 12px;
+    background: none;
+    margin: 0;
+    border: none;
 }
 
-.navbar .search-area .btn.btn-left {
-    margin-right: -3px;
-    border-right: none;
-    border-radius: 16px 0 0 16px;
-    padding: 0 10px 0 15px;
+.navbar .search-area button:focus {
+    outline: none;
 }
 
-.navbar .search-area .btn.btn-right {
-    border-right: none;
-    border-radius: 0 16px 16px 0;
-    padding: 0 15px 0 10px;
+.navbar .search-area .round-btn-group {
+    display: inline-block;
+    background-color: #3e5d86;
+    border-radius: 16px;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 15px;
+}
+
+.navbar .search-area .round-btn-group .btn-left {
+    border-right: 1px solid #5576a3;
+    padding: 0 12px 0 2px;
+}
+
+.navbar .search-area .round-btn-group .btn-right {
+    margin-left: -5px;
+    padding: 0 2px 0 12px;
 }
 
 .main {
@@ -295,7 +320,7 @@ a:hover {
     width: 300px;
     margin-left: 10px;
     border: 1px solid #ededed;
-    border-radius: 4px;
+    border-radius: 2px;
     z-index: 2;
     overflow: hidden;
     background-color: #fff;
@@ -383,8 +408,24 @@ a:hover {
     background-color: #fff;
 }
 
+.main .left-area .group-area .add-group-area .form-inline button {
+    border-radius: 16px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 15px;
+}
+
+.main .left-area .group-area .add-group-area .form-inline button:focus {
+    outline: none;
+}
+
 .main .left-area .group-area .add-group-area input {
     width: 150px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 16px;
+    font-size: 12px;
+    background-color: #fbfbfb;
 }
 
 .main .left-area .group-area .group-tag {
@@ -487,7 +528,8 @@ a:hover {
     margin-left: 80px;
     margin-top: 70px;
     background-color: #fff;
-    border: 1px solid #eee;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
     padding: 0 15px;
     z-index: 1;
     line-height: 30px;
@@ -515,6 +557,8 @@ a:hover {
     background-color: #5c7fab;
     color: #fff;
     line-height: 30px;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
 }
 
 .main .right-area .option-bar-container {
@@ -529,7 +573,8 @@ a:hover {
 .main .right-area .option-bar {
     width: 100%;
     height: 42px;
-    border: 1px solid #ededed;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
     background: rgba(255, 255, 255, .9);
     color: #222;
     line-height: 40px;
@@ -551,21 +596,39 @@ a:hover {
     user-select: none;
 }
 
-.main .right-area .option-bar .options div {
+.main .right-area .option-bar .options .checkbox {
     margin-left: 15px;
 }
 
-.main .right-area .option-bar .map-selection button {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border-radius: 0;
+.main .right-area .option-bar .map-selection {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.main .right-area .option-bar .map-selection .dropdown-menu {
+    border-radius: 2px;
+}
+
+.main .right-area .option-bar .map-selection span {
+    font-weight: normal;
+    padding-right: 5px;
+}
+
+.main .right-area .option-bar .map-selection i {
+    font-size: 16px;
 }
 
 #map-container {
     width: 100%;
     height: 100%;
     border: 1px solid #ededed;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .custom-scrollbar {

@@ -155,6 +155,14 @@ $(function () {
         }
     });
 
+    $('.map-selection').click(function () {
+        $(this).find('.dropdown-menu').slideToggle(150);
+    });
+
+    $('.map-selection li').click(function () {
+        $('.map-selection span').html($(this).find('a').html());
+    });
+
     var height = $('body').height();
     $('.left-area').height(height - 140);
 });
