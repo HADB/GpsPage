@@ -299,6 +299,7 @@ a:hover {
     z-index: 2;
     overflow: hidden;
     background-color: #fff;
+    height: 100%;
 }
 
 .main .left-area .title {
