@@ -147,9 +147,9 @@ $(function () {
         }
         else {
             $('.left-area').animate({left: '0'}, 100);
-            $('.right-area').animate({'padding-left': '320px'}, 100);
-            $('.hide-left').animate({'left': '310px'}, 100);
-            $('.option-bar-container').animate({'padding-left': '335px'}, 100);
+            $('.right-area').animate({'padding-left': '285px'}, 100);
+            $('.hide-left').animate({'left': '275px'}, 100);
+            $('.option-bar-container').animate({'padding-left': '300px'}, 100);
             $(this).find('i').addClass('fa-angle-left');
             $(this).find('i').removeClass('fa-angle-right');
         }
