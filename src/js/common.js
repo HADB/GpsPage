@@ -165,4 +165,5 @@ $(function () {
 
     var height = $('body').height();
     $('.left-area').height(height - 140);
+    $('.modal-dialog').css('margin-top', (height - 658) / 2);
 });
