@@ -136,6 +136,19 @@ $(function () {
         $("#customer-search-modal").modal();
     });
 
+    $('#customer-search-modal .nav-tabs li').click(function () {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        if ($(this).hasClass('customer-relationship')) {
+            $('#customer-search-modal .panel').hide();
+            $('#customer-search-modal .customer-relationship').show();
+        }
+        if ($(this).hasClass('customer-details')) {
+            $('#customer-search-modal .panel').hide();
+            $('#customer-search-modal .customer-details').show();
+        }
+    });
+
     $('.hide-left').click(function () {
         if ($(this).find('i').hasClass('fa-angle-left')) {
             $('.left-area').animate({left: '-300px'}, 100);
