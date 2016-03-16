@@ -703,4 +703,8 @@ button:focus, button:active {
     background-image: url('../img/checkbox-checked-hover.png');
 }
 
-
+.open-notice-sound.checkbox {
+    position: absolute;
+    top: 8px;
+    left: 100px;
+}
