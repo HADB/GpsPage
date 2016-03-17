@@ -283,6 +283,38 @@ button:focus, button:active {
     border-radius: 50%;
 }
 
+.nav-tabs {
+    border-bottom: 0;
+}
+
+.nav-tabs > li > a {
+    background: url('../img/tab-gray.png') no-repeat center;
+    border: none;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 0 0 15px;
+    color: #555;
+}
+
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus, .nav-tabs > li > a:active {
+    color: #555 !important;
+    border: none;
+    background: url('../img/tab-gray.png') no-repeat center;
+}
+
+.nav-tabs > li.active > a {
+    color: #fff;
+    border: none;
+    background: url('../img/tab-blue.png') no-repeat center;
+}
+
+.nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:active {
+    color: #fff !important;;
+    border: none;
+    background: url('../img/tab-blue.png') no-repeat center;
+}
+
 .navbar {
     border-top: none;
     border-bottom: 1px solid #ededed;
@@ -719,7 +751,6 @@ button:focus, button:active {
 
 #customer-search-modal .panel {
     border-radius: 0;
-    border-top: none;
     font-size: 12px;
 }
 
