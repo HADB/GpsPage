@@ -518,9 +518,11 @@ button:focus, button:active {
     border-radius: 15px;
     display: inline-block;
     line-height: 28px;
-    padding: 0 15px;
     margin: 5px 0;
     cursor: pointer;
+    text-align: center;
+    font-size: 12px;
+    width: 76px;
 }
 
 .main .left-area .group-area .group-tag:hover {
