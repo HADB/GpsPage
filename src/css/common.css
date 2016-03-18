@@ -627,6 +627,11 @@ button:focus, button:active {
 .main .right-area .bottom-box .panel-body {
     height: 170px;
     padding: 0;
+    overflow: auto;
+}
+
+.main .right-area .bottom-box .panel-body table {
+    margin: 0;
 }
 
 .main .right-area .hide-left {

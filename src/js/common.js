@@ -176,6 +176,21 @@ $(function () {
         $('.map-selection span').html($(this).find('a').html());
     });
 
+    var $table = $('.bottom-box table');
+    $('.bottom-box-toggle-btn').click(function () {
+        if ($(this).hasClass('fa-chevron-circle-down')) {
+            $table.floatThead('destroy');
+            $(this).removeClass('fa-chevron-circle-down').addClass('fa-chevron-circle-up');
+            $('.bottom-box').animate({'bottom': '-170px'}, 100);
+        }
+        else {
+            $(this).removeClass('fa-chevron-circle-up').addClass('fa-chevron-circle-down');
+            $('.bottom-box').animate({'bottom': '0'}, 100, 'swing', function () {
+                $table.floatThead();
+            });
+        }
+    });
+
     var height = $('body').height();
     $('.left-area').height(height - 140);
     $('.modal-dialog').css('margin-top', (height - 658) / 2);
