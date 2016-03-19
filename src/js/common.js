@@ -75,7 +75,9 @@ $(function () {
             $guest.siblings('.guest').removeClass('expanded');
             $guest.siblings('.guest').find('.children').slideUp(150);
             $guest.children('.children').children('.guest').show();
-            $guest.children('.children').slideDown(150);
+            $guest.children('.children').slideDown(150, function () {
+                $('.custom-scrollbar').perfectScrollbar('update');
+            });
         }
     });
 
