@@ -586,7 +586,7 @@ button:focus, button:active {
     left: 0;
     top: 0;
     width: 300px;
-    height: 30px;
+    height: 100%;
     z-index: -1;
     margin-left: -30px;
 }
