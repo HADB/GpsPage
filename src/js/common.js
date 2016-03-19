@@ -93,7 +93,9 @@ $(function () {
             $group.siblings('.group').find('.user').removeClass('active');
             $group.siblings('.group').find('.users').slideUp(150);
             $group.siblings('.group').removeClass('expanded');
-            $group.find('.users').slideDown(150);
+            $group.find('.users').slideDown(150, function () {
+                $('.custom-scrollbar').perfectScrollbar('update');
+            });
         }
     });
 
