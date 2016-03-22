@@ -99,6 +99,14 @@ $(function () {
         }
     });
 
+    $('.groups .group').mouseenter(function (event) {
+        $(event.target).closest('.group').find('.group-actions').addClass('active');
+    });
+
+    $('.groups .group').mouseleave(function (event) {
+        $(event.target).closest('.group').find('.group-actions').removeClass('active');
+    });
+
     $('.search-bar input').focus(function () {
         $(this).siblings('.dropdown').slideDown(150);
         $(this).parent().addClass('active');
@@ -206,7 +214,6 @@ $(function () {
         $('.bottom-box .panel-body').scrollTop(0);
         $table.floatThead('destroy');
     }).on('resizemove', function (event) {
-
         var target = event.target;
         var y = (parseFloat(target.getAttribute('data-y')) || 0);
 

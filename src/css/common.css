@@ -536,13 +536,14 @@ button:focus, button:active {
 }
 
 .main .left-area .group-area .groups {
-    padding: 0 30px 0 30px;
+    padding: 0 10px 0 30px;
     max-height: 320px;
     border-top: 1px solid #ededed;
 }
 
 .main .left-area .group-area .groups .group {
     cursor: pointer;
+    position: relative;
 }
 
 .main .left-area .group-area .groups .group hr {
@@ -553,13 +554,37 @@ button:focus, button:active {
     padding: 5px 0;
 }
 
+.main .left-area .group-area .groups .group-actions {
+    display: none;
+    position: absolute;
+    top: 0;
+    height: 30px;
+    line-height: 30px;
+    right: 15px;
+}
+
+.main .left-area .group-area .groups .group-actions.active {
+    display: block;
+}
+
 .main .left-area .group-area .groups .group .users .user {
     position: relative;
     padding: 5px 0;
 }
 
-.main .left-area .group-area .groups .group .users .user a {
+.main .left-area .group-area .groups .group .users .user .func-btns {
     display: none;
+    text-align: right;
+}
+
+.main .left-area .group-area .groups .group .users .user .left-half {
+    width: 50%;
+    float: left;
+}
+
+.main .left-area .group-area .groups .group .users .user .right-half {
+    width: 40%;
+    float: right;
 }
 
 .main .left-area .group-area .groups .group .users .user span {
@@ -568,6 +593,10 @@ button:focus, button:active {
 
 .main .left-area .group-area .groups .group .users .user.active {
     color: #fff;
+}
+
+.main .left-area .group-area .groups .group .users .user.active .func-btns {
+    display: block;
 }
 
 .main .left-area .group-area .groups .group .users .user.active a {
@@ -612,8 +641,8 @@ button:focus, button:active {
     height: 100%;
 }
 
-.main .right-area .bottom-box .btn-notice {
-    padding: 0 15px;
+.main .right-area .bottom-box a {
+    padding: 0 15px 0 0;
     cursor: pointer;
 }
 
