@@ -54,7 +54,11 @@ $(function () {
         $(this).addClass('active');
     });
 
-    $('.user').hover(function () {
+    $('.user').mouseenter(function (event) {
+        console.log($(event.target).hasClass('active'));
+        if (!$(event.target).hasClass('user.active')) {
+            $('.popup-menu').hide();
+        }
         $('.user').removeClass('active');
         $(this).addClass('active');
     });
@@ -230,6 +234,14 @@ $(function () {
     }).on('resizeend', function () {
         $('.bottom-box .panel-body').scrollTop(0);
         $table.floatThead();
+    });
+
+    $('.func-btns .more').click(function (event) {
+        console.log(event);
+        var $popupMenu = $('.popup-menu');
+        $popupMenu.css('left', event.clientX);
+        $popupMenu.css('top', event.clientY - 130);
+        $popupMenu.show();
     });
 
     var height = $('body').height();

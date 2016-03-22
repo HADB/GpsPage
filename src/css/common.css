@@ -404,10 +404,19 @@ button:focus, button:active {
     margin-left: 5px;
     border: 1px solid #ededed;
     border-radius: 2px;
-    z-index: 2;
-    overflow: hidden;
+    z-index: 3;
     background-color: #fff;
     height: 100%;
+}
+
+.main .left-area .popup-menu {
+    position: absolute;
+    padding: 5px 10px;
+    width: 200px;
+    background: #fff;
+    border: 1px solid #E7EEF4;
+    z-index: 10;
+    display: none;
 }
 
 .main .left-area .title {
