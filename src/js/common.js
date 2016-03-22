@@ -183,16 +183,46 @@ $(function () {
     var $table = $('.bottom-box table');
     $('.bottom-box-toggle-btn').click(function () {
         if ($(this).hasClass('fa-chevron-circle-down')) {
+            $('.bottom-box .panel-body').scrollTop(0);
             $table.floatThead('destroy');
             $(this).removeClass('fa-chevron-circle-down').addClass('fa-chevron-circle-up');
-            $('.bottom-box').animate({'bottom': '-170px'}, 100);
+            $('.bottom-box').animate({'height': '35px'}, 100);
+
         }
         else {
             $(this).removeClass('fa-chevron-circle-up').addClass('fa-chevron-circle-down');
-            $('.bottom-box').animate({'bottom': '0'}, 100, 'swing', function () {
+            $('.bottom-box').animate({'height': '205px'}, 100, 'swing', function () {
+                $('.bottom-box .panel-body').css('height', '168px');
+                $('.bottom-box .panel-body').scrollTop(0);
                 $table.floatThead();
             });
         }
+    });
+
+    interact('.main .right-area .bottom-box').resizable({
+        preserveAspectRatio: true,
+        edges: {left: true, right: true, bottom: true, top: true}
+    }).on('resizestart', function () {
+        $('.bottom-box .panel-body').scrollTop(0);
+        $table.floatThead('destroy');
+    }).on('resizemove', function (event) {
+
+        var target = event.target;
+        var y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+        target.style.height = event.rect.height + 'px';
+
+        $(target).find('.panel-body').css('height', event.rect.height - 32);
+
+        y += event.deltaRect.top;
+
+        target.style.webkitTransform = target.style.transform =
+            'translateY(y' + 'px)';
+
+        target.setAttribute('data-y', y);
+    }).on('resizeend', function () {
+        $('.bottom-box .panel-body').scrollTop(0);
+        $table.floatThead();
     });
 
     var height = $('body').height();
