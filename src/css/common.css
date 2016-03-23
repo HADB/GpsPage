@@ -588,7 +588,7 @@ button:focus, button:active {
 
 .main .left-area .group-area .groups .group .users .user .left-half {
     width: 50%;
-    float: left;
+    display: inline-block;
 }
 
 .main .left-area .group-area .groups .group .users .user .right-half {
