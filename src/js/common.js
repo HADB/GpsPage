@@ -173,6 +173,7 @@ $(function () {
             $('.option-bar-container').animate({'padding-left': '30px'}, 100);
             $(this).find('i').addClass('fa-angle-right');
             $(this).find('i').removeClass('fa-angle-left');
+            $('.bottom-box').animate({'padding-left': '10px'}, 100);
         }
         else {
             $('.left-area').animate({left: '0'}, 100);
@@ -181,6 +182,7 @@ $(function () {
             $('.option-bar-container').animate({'padding-left': '300px'}, 100);
             $(this).find('i').addClass('fa-angle-left');
             $(this).find('i').removeClass('fa-angle-right');
+            $('.bottom-box').animate({'padding-left': '285px'}, 100);
         }
     });
 
