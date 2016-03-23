@@ -166,6 +166,7 @@ $(function () {
     });
 
     $('.hide-left').click(function () {
+        var $table = $('.bottom-box table');
         if ($(this).find('i').hasClass('fa-angle-left')) {
             $('.left-area').animate({left: '-300px'}, 100);
             $('.right-area').animate({'padding-left': '15px'}, 100);
@@ -173,6 +174,8 @@ $(function () {
             $('.option-bar-container').animate({'padding-left': '30px'}, 100);
             $(this).find('i').addClass('fa-angle-right');
             $(this).find('i').removeClass('fa-angle-left');
+            $('.bottom-box .panel-body').scrollTop(0);
+            $table.floatThead('destroy');
             $('.bottom-box').animate({'padding-left': '10px'}, 100);
         }
         else {
@@ -182,7 +185,10 @@ $(function () {
             $('.option-bar-container').animate({'padding-left': '300px'}, 100);
             $(this).find('i').addClass('fa-angle-left');
             $(this).find('i').removeClass('fa-angle-right');
-            $('.bottom-box').animate({'padding-left': '285px'}, 100);
+            $('.bottom-box').animate({'padding-left': '285px'}, 100, 'swing', function () {
+                $('.bottom-box .panel-body').scrollTop(0);
+                $table.floatThead();
+            });
         }
     });
 
