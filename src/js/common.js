@@ -111,6 +111,44 @@ $(function () {
         $(event.target).closest('.group').find('.group-actions').removeClass('active');
     });
 
+    $('.groups .group .group-actions .delete').click(function () {
+        $(this).closest('.group').slideUp(150, function () {
+            $('#message-modal .modal-body').html('删除成功！');
+            $('#message-modal').modal();
+        });
+    });
+
+    $('.groups .group .group-actions .edit').click(function () {
+        var $group = $(this).closest('.group');
+        $group.find('.group-name').hide();
+        $group.find('.group-name-edit').show();
+        $group.find('.group-actions .edit').hide();
+        $group.find('.group-actions .delete').hide();
+        $group.find('.group-actions .save').show();
+        $group.find('.group-actions .cancel').show();
+    });
+
+    $('.groups .group .group-actions .save').click(function () {
+        var $group = $(this).closest('.group');
+        var newName = $group.find('.group-name-edit').val();
+        $group.find('.group-name').html(newName).show();
+        $group.find('.group-name-edit').hide();
+        $group.find('.group-actions .edit').show();
+        $group.find('.group-actions .delete').show();
+        $group.find('.group-actions .save').hide();
+        $group.find('.group-actions .cancel').hide();
+    });
+
+    $('.groups .group .group-actions .cancel').click(function () {
+        var $group = $(this).closest('.group');
+        $group.find('.group-name').show();
+        $group.find('.group-name-edit').hide();
+        $group.find('.group-actions .edit').show();
+        $group.find('.group-actions .delete').show();
+        $group.find('.group-actions .save').hide();
+        $group.find('.group-actions .cancel').hide();
+    });
+
     $('.search-bar input').focus(function () {
         $(this).siblings('.dropdown').slideDown(150);
         $(this).parent().addClass('active');

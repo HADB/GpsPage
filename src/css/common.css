@@ -568,6 +568,11 @@ button:focus, button:active {
     padding: 5px 0;
 }
 
+.main .left-area .group-area .groups .group-name-edit {
+    margin: 2px 0;
+    width: 120px;
+}
+
 .main .left-area .group-area .groups .group-actions {
     display: none;
     position: absolute;
