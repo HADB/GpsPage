@@ -20,7 +20,7 @@
             <img class="avatar" src="img/demo-avatar.jpg">
             <span>您好，</span>
             <span class="user-name">用户名</span>
-            <a href="javascript:void(0);">修改密码</a>
+            <a href="javascript:void(0);" data-toggle="modal" data-target="#change-password-modal">修改密码</a>
             <a href="javascript:void(0);">退出</a>
         </div>
     </div>
@@ -619,12 +619,15 @@
                             <p class="text-center">
                                 <i class="fa fa-angle-right"></i>
                             </p>
+
                             <p class="text-center">
                                 <i class="fa fa-angle-double-right"></i>
                             </p>
+
                             <p class="text-center">
                                 <i class="fa fa-angle-double-left"></i>
                             </p>
+
                             <p class="text-center">
                                 <i class="fa fa-angle-left"></i>
                             </p>
@@ -1338,6 +1341,45 @@
                                 <button type="button" class="btn btn-primary">提交</button>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modal-title">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="close-img"></span></button>
+                    <h4 class="modal-title" id="change-password-modal-title">修改密码</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="old-password" class="col-xs-4 control-label">原密码</label>
+
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="old-password" placeholder="请输入原密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password" class="col-xs-4 control-label">新密码</label>
+
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="new-password" placeholder="新密码（6-18个字符）">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password-repeat" class="col-xs-4 control-label">重复密码</label>
+
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="new-password-repeat" placeholder="重复密码（6-18个字符）">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="text-center">
+                        <hr>
+                        <button type="button" class="btn btn-primary">提交</button>
                     </div>
                 </div>
             </div>
