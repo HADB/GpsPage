@@ -1064,3 +1064,18 @@ a.readed, a.readed:hover, a.readed:active {
 label {
     max-width: initial;
 }
+
+.select2-results__option .select2-results__group:hover {
+    color: #fff;
+    background-color: #5897fb;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #fff;
+    color: inherit;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
+    color: #fff;
+    background-color: #5897fb;
+}
