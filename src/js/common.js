@@ -433,6 +433,7 @@ $(function () {
 
     $('body').on('click', '.select2-results__option .select2-results__group', function () {
         $(this).siblings().slideToggle(150);
+        $(this).parent().toggleClass('closed');
         $('.select2-container--open .select2-selection__rendered').html($(this).html());
     });
 
