@@ -21,8 +21,6 @@ $(function () {
         $infoWindowContent.append('<h5><span>定位：</span>2016/03/01 11:41:19</h5>');
         $infoWindowContent.append('<h5><a>街景</a><a>跟踪</a><a>回放</a><a>放大</a></h5>');
 
-        var bubbleWindow = new BMap.InfoWindow("TY01-883591", {});
-
         var infoWindow = new BMap.InfoWindow($infoWindowContent.prop('outerHTML'), infoWindowOptions);  // 创建信息窗口对象
 
         var carIcon = new BMap.Icon("img/car.png", new BMap.Size(50, 26), {
@@ -34,14 +32,24 @@ $(function () {
         marker.addEventListener("click", function () {
             map.openInfoWindow(infoWindow, point);      // 打开信息窗口
             var power = getUrlParam("battery");
-            $(".power-value").css("width", power + "%"); 
+            $(".power-value").css("width", power + "%");
             $(".BMap_bubble_title").css("white-space", "normal")
         });
         map.addOverlay(marker);
 
-        if(showBubbleTitle) {
-            map.openInfoWindow(bubbleWindow, point);
-        };
+        if (showBubbleTitle) {
+            var bubbleLabel = new BMap.Label("TY01-883591", {
+                position: point,
+                offset: new BMap.Size(18, -30)
+            });
+            bubbleLabel.setStyle({
+                color: "black",
+                fontSize: "12px",
+                lineHeight: "20px",
+                fontFamily: "微软雅黑"
+            });
+            map.addOverlay(bubbleLabel);
+        }
     }
 
     //自定义滚动条样式
@@ -223,7 +231,7 @@ $(function () {
         } else if ($(this).hasClass('device-details')) {
             $('#device-search-modal .panel').hide();
             $('#device-search-modal .device-details').show();
-        } 
+        }
     });
 
     $('.hide-left').click(function () {
@@ -315,21 +323,21 @@ $(function () {
 
     $(".full-screen").click(function () {
         var $this = $(this);
-        if($this.hasClass('checked')) {
+        if ($this.hasClass('checked')) {
             $(".header").hide();
             $(".navbar").hide();
             $(".main").css("padding-top", "0");
             var $hideLeftAreaButton = $(".hide-left");
-            if($hideLeftAreaButton.find('i').hasClass('fa-angle-left')) {
-                $hideLeftAreaButton.click();    
+            if ($hideLeftAreaButton.find('i').hasClass('fa-angle-left')) {
+                $hideLeftAreaButton.click();
             }
-            $(".bottom-box").hide();  
+            $(".bottom-box").hide();
             //renderMap();
         } else {
             $(".main").css("padding-top", "130px");
             $(".header").show();
-             $(".navbar").show();
-            $(".bottom-box").show();     
+            $(".navbar").show();
+            $(".bottom-box").show();
         }
     });
 
@@ -340,7 +348,7 @@ $(function () {
         $popupMenu.show();
     });
 
-    $("body").on("contextmenu", ".root-guest", function(e) {
+    $("body").on("contextmenu", ".root-guest", function (e) {
         $("#contextMenu").css({
             display: "block",
             left: e.pageX,
@@ -351,7 +359,7 @@ $(function () {
         return false;
     });
 
-    $("#contextMenu").on("click", "a", function() {
+    $("#contextMenu").on("click", "a", function () {
         $("#contextMenu").hide();
     });
 
@@ -366,10 +374,10 @@ $(function () {
         var $shownColumnsTable = $("#shown-columns-table");
 
         var operation = $(this).data("operation");
-        switch(operation) {
+        switch (operation) {
             case "column-to-right":
                 $hiddenColumnsTable.find("td.selected").each(function () {
-                    if($(this).text() !== "") {
+                    if ($(this).text() !== "") {
                         $shownColumnsTable.find("tbody").prepend('<tr><td>' + $(this).text() + '</td></tr>');
                         $(this).remove();
                     }
@@ -377,7 +385,7 @@ $(function () {
                 break;
             case "column-to-left":
                 $shownColumnsTable.find("td.selected").each(function () {
-                    if($(this).text() !== "") {
+                    if ($(this).text() !== "") {
                         $hiddenColumnsTable.find("tbody").prepend('<tr><td>' + $(this).text() + '</td></tr>');
                         $(this).remove();
                     }
@@ -385,7 +393,7 @@ $(function () {
                 break;
             case "all-to-right-button":
                 $hiddenColumnsTable.find("td").each(function () {
-                    if($(this).text() !== "") {
+                    if ($(this).text() !== "") {
                         $shownColumnsTable.find("tbody").prepend('<tr><td>' + $(this).text() + '</td></tr>');
                         $(this).remove();
                     }
@@ -393,7 +401,7 @@ $(function () {
                 break;
             case "all-to-left-button":
                 $shownColumnsTable.find("td").each(function () {
-                    if($(this).text() !== "") {
+                    if ($(this).text() !== "") {
                         $hiddenColumnsTable.find("tbody").prepend('<tr><td>' + $(this).text() + '</td></tr>');
                         $(this).remove();
                     }
@@ -402,15 +410,15 @@ $(function () {
         }
     });
 
-    $("#contact-us").click(function(event) {
+    $("#contact-us").click(function (event) {
         $(this).hide();
         $(".contact-info").css({display: "inline-block"});
     });
 
     $("body").click(function (event) {
-        if(!$(event.target).is("#contact-us")) {
+        if (!$(event.target).is("#contact-us")) {
             $(".contact-info").css({display: "none"});
-            $("#contact-us").show();    
+            $("#contact-us").show();
         }
     });
 
@@ -425,11 +433,11 @@ $(function () {
 
     $("#search-customer").on("select2:selecting", function (e) {
         var $this = $(".select2-results__option--highlighted");
-        if($this.text().indexOf("天易根客户") !== -1) {
-            if($this.hasClass('closed')) {
+        if ($this.text().indexOf("天易根客户") !== -1) {
+            if ($this.hasClass('closed')) {
                 $this.removeClass('closed');
                 $this.nextAll("li").each(function () {
-                    if($(this).text().indexOf("天易根客户") === -1) {
+                    if ($(this).text().indexOf("天易根客户") === -1) {
                         $(this).show();
                     } else {
                         return false;
@@ -438,30 +446,30 @@ $(function () {
             } else {
                 $this.addClass('closed');
                 $this.nextAll("li").each(function () {
-                    if($(this).text().indexOf("天易根客户") === -1) {
+                    if ($(this).text().indexOf("天易根客户") === -1) {
                         $(this).hide();
                     } else {
                         return false;
                     }
                 })
             }
-            e.stopPropagation(); 
+            e.stopPropagation();
             return false;
         }
     });
 
     $("#alarm").click(function () {
-        if(!$(this).hasClass('checked')) {
+        if (!$(this).hasClass('checked')) {
             var audio = new Audio('audio/alarm.wav');
             audio.play();
         }
     });
 
     $(".device-name").click(function () {
-        if($(this).hasClass('checked')) {
-            renderMap("signal0", true);    
+        if ($(this).hasClass('checked')) {
+            renderMap("signal0", true);
         } else {
-            renderMap("signal0", false);      
+            renderMap("signal0", false);
         }
     });
 
@@ -470,28 +478,28 @@ $(function () {
     $('.modal-dialog').css('margin-top', (height - 658) / 2);
     $(document).ready(function () {
         var signal = getUrlParam("signal");
-        if(!signal) {
+        if (!signal) {
             signal = 4;
         }
-        
-        renderMap("signal" + signal, false);   
-        
+
+        renderMap("signal" + signal, false);
+
         $("#search-customer").select2();
         $("#search-customer1").select2();
         jeDate.skin("gray");
         jeDate({
-            dateCell:".datepicker-control",
-            format:"YYYY年MM月DD日 hh:mm:ss",
-            isinitVal:true,
-            isTime:true, 
+            dateCell: ".datepicker-control",
+            format: "YYYY年MM月DD日 hh:mm:ss",
+            isinitVal: true,
+            isTime: true,
             zIndex: 9999
         });
     });
 
-    function getUrlParam(name){  
-        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");  
-        var r = window.location.search.substr(1).match(reg);  
-        if (r!=null) return unescape(r[2]);  
-        return null;  
-    }  
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
 });

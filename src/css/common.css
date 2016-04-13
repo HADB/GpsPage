@@ -122,7 +122,7 @@ button:focus, button:active {
 }
 
 .info-content h5 {
-    margin: 10px 0;    
+    margin: 10px 0;
 }
 
 .info-content h5 span {
@@ -296,7 +296,7 @@ button:focus, button:active {
     margin: 0;
 }
 
-.header .user .contact-info{
+.header .user .contact-info {
     display: none;
     height: 35px;
     vertical-align: bottom;
@@ -318,6 +318,7 @@ button:focus, button:active {
     color: #798fac;
     font-size: 10px;
 }
+
 .nav-tabs {
     border-bottom: 0;
 }
@@ -607,7 +608,7 @@ button:focus, button:active {
 .main .left-area .group-area .groups .group .checkbox {
     display: inline-block;
     margin: 5px 0 0 -40px;
-    float: left;   
+    float: left;
 }
 
 .main .left-area .group-area .groups .group .tree-icon {
@@ -811,9 +812,9 @@ button:focus, button:active {
 }
 
 .main .right-area .option-bar .info {
-    white-space:nowrap; 
-    overflow:hidden; 
-    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .main .right-area .option-bar .options {
@@ -937,9 +938,9 @@ input[type=checkbox], input[type=radio] {
 }
 
 #contextMenu {
-    display:none;
-    position:absolute;
-    margin-bottom:5px;    
+    display: none;
+    position: absolute;
+    margin-bottom: 5px;
 }
 
 #contextMenu .dropdown-menu {
@@ -964,6 +965,7 @@ a.readed, a.readed:hover, a.readed:active {
     margin-top: 15px;
     width: 500px;
 }
+
 .transfer form select {
     width: 300px;
 }
@@ -988,36 +990,42 @@ a.readed, a.readed:hover, a.readed:active {
 .signal1 {
     background-image: url("../img/SIGNAL-1.png");
 }
-.signal2{
+
+.signal2 {
     background-image: url("../img/SIGNAL-2.png");
 }
-.signal3{
+
+.signal3 {
     background-image: url("../img/SIGNAL-3.png");
 }
+
 .signal4 {
     background-image: url("../img/SIGNAL-4.png");
 }
+
 .signal5 {
     background-image: url("../img/SIGNAL-5.png");
 }
 
 .power {
-    width:18px;
-    height:12px;
+    width: 18px;
+    height: 12px;
     border: #000000 1px solid;
     margin: 5px 0 0 5px;
 }
-.power-value{ 
-    width:50%;
-    height:8px;
-    background:#3b4345;
+
+.power-value {
+    width: 50%;
+    height: 8px;
+    background: #3b4345;
     margin-top: .5px;
 }
-.top{ 
-    width:2px;
-    height:7px;
-    background:#6a797c;
-    margin-top:7px;
+
+.top {
+    width: 2px;
+    height: 7px;
+    background: #6a797c;
+    margin-top: 7px;
 }
 
 #select2-search-customer-results {
@@ -1049,7 +1057,10 @@ a.readed, a.readed:hover, a.readed:active {
     list-style-image: url('../img/doc.gif');
 }
 
-
 #select2-search-customer1-results li[role="group"] {
     list-style-image: url('../img/opened.png');
+}
+
+label {
+    max-width: initial;
 }
