@@ -1,6 +1,6 @@
 $(function () {
     //绘制地图
-    function renderMap() {
+    function renderMap(signal, showBubbleTitle) {
         var map = new BMap.Map("map-container");
         var point = new BMap.Point(121.47519, 31.228833);
         map.centerAndZoom(point, 16);
@@ -12,7 +12,7 @@ $(function () {
         var infoWindowOptions = {
             width: 230,     // 信息窗口宽度
             height: 158,     // 信息窗口高度
-            title: '<h5 class="title">TY01-883591<i class="fa fa-battery-half pull-right"></i><i class="fa fa-signal pull-right"></i></h5>'
+            title: '<h5 class="title">TY01-883591 <div class="top pull-right"></div><div class="power pull-right"><div class="power-value"></div></div><span class="pull-right signal ' + signal + '">&nbsp;</span></h5>'
         };
         var $infoWindowContent = $('<div class="info-content"></div>');
         $infoWindowContent.append('<h5><span>状态：</span>静止（1小时24分）</h5>');
@@ -20,6 +20,8 @@ $(function () {
         $infoWindowContent.append('<h5><span>信号：</span>2016/03/01 14:50:27</h5>');
         $infoWindowContent.append('<h5><span>定位：</span>2016/03/01 11:41:19</h5>');
         $infoWindowContent.append('<h5><a>街景</a><a>跟踪</a><a>回放</a><a>放大</a></h5>');
+
+        var bubbleWindow = new BMap.InfoWindow("TY01-883591", {});
 
         var infoWindow = new BMap.InfoWindow($infoWindowContent.prop('outerHTML'), infoWindowOptions);  // 创建信息窗口对象
 
@@ -31,11 +33,16 @@ $(function () {
 
         marker.addEventListener("click", function () {
             map.openInfoWindow(infoWindow, point);      // 打开信息窗口
+            var power = getUrlParam("battery");
+            $(".power-value").css("width", power + "%"); 
+            $(".BMap_bubble_title").css("white-space", "normal")
         });
         map.addOverlay(marker);
-    }
 
-    renderMap();
+        if(showBubbleTitle) {
+            map.openInfoWindow(bubbleWindow, point);
+        };
+    }
 
     //自定义滚动条样式
     $('.custom-scrollbar').perfectScrollbar({suppressScrollX: true});
@@ -203,6 +210,22 @@ $(function () {
         }
     });
 
+    $('#device-search-modal .nav-tabs li').click(function () {
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        if ($(this).hasClass('customer-relationship')) {
+            $('#device-search-modal .panel').hide();
+            $('#device-search-modal .customer-relationship').show();
+            $('#device-search-modal .customer-relationship .panel').show();
+        } else if ($(this).hasClass('transfer')) {
+            $('#device-search-modal .panel').hide();
+            $('#device-search-modal .transfer').show();
+        } else if ($(this).hasClass('device-details')) {
+            $('#device-search-modal .panel').hide();
+            $('#device-search-modal .device-details').show();
+        } 
+    });
+
     $('.hide-left').click(function () {
         var $table = $('.bottom-box table');
         if ($(this).find('i').hasClass('fa-angle-left')) {
@@ -284,13 +307,191 @@ $(function () {
 
     $('.func-btns .more').click(function (event) {
         console.log(event);
-        var $popupMenu = $('.popup-menu');
+        var $popupMenu = $('.operation-popup-menu');
         $popupMenu.css('left', event.clientX);
         $popupMenu.css('top', event.clientY - 130);
         $popupMenu.show();
     });
 
+    $(".full-screen").click(function () {
+        var $this = $(this);
+        if($this.hasClass('checked')) {
+            $(".header").hide();
+            $(".navbar").hide();
+            $(".main").css("padding-top", "0");
+            var $hideLeftAreaButton = $(".hide-left");
+            if($hideLeftAreaButton.find('i').hasClass('fa-angle-left')) {
+                $hideLeftAreaButton.click();    
+            }
+            $(".bottom-box").hide();  
+            //renderMap();
+        } else {
+            $(".main").css("padding-top", "130px");
+            $(".header").show();
+             $(".navbar").show();
+            $(".bottom-box").show();     
+        }
+    });
+
+    $("#move-to-group").click(function (event) {
+        var $popupMenu = $('.group-popup-menu');
+        $popupMenu.css('left', event.clientX);
+        $popupMenu.css('top', event.clientY - 130);
+        $popupMenu.show();
+    });
+
+    $("body").on("contextmenu", ".root-guest", function(e) {
+        $("#contextMenu").css({
+            display: "block",
+            left: e.pageX,
+            top: e.pageY
+        });
+
+        console.log(e.pageX, e.pageY);
+        return false;
+    });
+
+    $("#contextMenu").on("click", "a", function() {
+        $("#contextMenu").hide();
+    });
+
+    $("#column-modal").on("click", "td", function () {
+        var $this = $(this);
+        $this.parent('tr').siblings('tr').find('td').removeClass('selected');
+        $this.toggleClass('selected');
+    });
+
+    $("#column-operation-buttons").find("p").click(function () {
+        var $hiddenColumnsTable = $("#hidden-columns-table");
+        var $shownColumnsTable = $("#shown-columns-table");
+
+        var operation = $(this).data("operation");
+        switch(operation) {
+            case "column-to-right":
+                $hiddenColumnsTable.find("td.selected").each(function () {
+                    if($(this).text() !== "") {
+                        $shownColumnsTable.find("tbody").prepend('<tr><td>' + $(this).text() + '</td></tr>');
+                        $(this).remove();
+                    }
+                });
+                break;
+            case "column-to-left":
+                $shownColumnsTable.find("td.selected").each(function () {
+                    if($(this).text() !== "") {
+                        $hiddenColumnsTable.find("tbody").prepend('<tr><td>' + $(this).text() + '</td></tr>');
+                        $(this).remove();
+                    }
+                });
+                break;
+            case "all-to-right-button":
+                $hiddenColumnsTable.find("td").each(function () {
+                    if($(this).text() !== "") {
+                        $shownColumnsTable.find("tbody").prepend('<tr><td>' + $(this).text() + '</td></tr>');
+                        $(this).remove();
+                    }
+                });
+                break;
+            case "all-to-left-button":
+                $shownColumnsTable.find("td").each(function () {
+                    if($(this).text() !== "") {
+                        $hiddenColumnsTable.find("tbody").prepend('<tr><td>' + $(this).text() + '</td></tr>');
+                        $(this).remove();
+                    }
+                });
+                break;
+        }
+    });
+
+    $("#contact-us").click(function(event) {
+        $(this).hide();
+        $(".contact-info").css({display: "inline-block"});
+    });
+
+    $("body").click(function (event) {
+        if(!$(event.target).is("#contact-us")) {
+            $(".contact-info").css({display: "none"});
+            $("#contact-us").show();    
+        }
+    });
+
+    $(document).on("click", "a.unread", function () {
+        $(this).parents("tr").removeClass('danger');
+        $(this).text("已读").removeClass('unread').addClass('readed');
+    });
+
+    $(document).on("click", "a.unlock", function () {
+        $(this).parents("tr").remove();
+    });
+
+    $("#search-customer").on("select2:selecting", function (e) {
+        var $this = $(".select2-results__option--highlighted");
+        if($this.text().indexOf("天易根客户") !== -1) {
+            if($this.hasClass('closed')) {
+                $this.removeClass('closed');
+                $this.nextAll("li").each(function () {
+                    if($(this).text().indexOf("天易根客户") === -1) {
+                        $(this).show();
+                    } else {
+                        return false;
+                    }
+                })
+            } else {
+                $this.addClass('closed');
+                $this.nextAll("li").each(function () {
+                    if($(this).text().indexOf("天易根客户") === -1) {
+                        $(this).hide();
+                    } else {
+                        return false;
+                    }
+                })
+            }
+            e.stopPropagation(); 
+            return false;
+        }
+    });
+
+    $("#alarm").click(function () {
+        if(!$(this).hasClass('checked')) {
+            var audio = new Audio('audio/alarm.wav');
+            audio.play();
+        }
+    });
+
+    $(".device-name").click(function () {
+        if($(this).hasClass('checked')) {
+            renderMap("signal0", true);    
+        } else {
+            renderMap("signal0", false);      
+        }
+    });
+
     var height = $('body').height();
     $('.left-area').height(height - 140);
     $('.modal-dialog').css('margin-top', (height - 658) / 2);
+    $(document).ready(function () {
+        var signal = getUrlParam("signal");
+        if(!signal) {
+            signal = 4;
+        }
+        
+        renderMap("signal" + signal, false);   
+        
+        $("#search-customer").select2();
+        $("#search-customer1").select2();
+        jeDate.skin("gray");
+        jeDate({
+            dateCell:".datepicker-control",
+            format:"YYYY年MM月DD日 hh:mm:ss",
+            isinitVal:true,
+            isTime:true, 
+            zIndex: 9999
+        });
+    });
+
+    function getUrlParam(name){  
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");  
+        var r = window.location.search.substr(1).match(reg);  
+        if (r!=null) return unescape(r[2]);  
+        return null;  
+    }  
 });

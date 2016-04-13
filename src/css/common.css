@@ -112,8 +112,17 @@ button:focus, button:active {
     padding-right: 15px;
 }
 
+.BMap_bubble_title h5.title img {
+    height: 10px;
+    width: 10px;
+}
+
 .info-content {
     margin-top: 0px;
+}
+
+.info-content h5 {
+    margin: 10px 0;    
 }
 
 .info-content h5 span {
@@ -283,6 +292,32 @@ button:focus, button:active {
     border-radius: 50%;
 }
 
+.header .user .phone-icon {
+    margin: 0;
+}
+
+.header .user .contact-info{
+    display: none;
+    height: 35px;
+    vertical-align: bottom;
+}
+
+.header .user .contact-info ul {
+    display: inline-block;
+    list-style: none;
+    color: #ffffff;
+    padding: 0 10px;
+    margin-bottom: -15px;
+}
+
+.header .user .contact-info ul .phone-number {
+    font-weight: bold;
+}
+
+.header .user .contact-info ul .contact-name {
+    color: #798fac;
+    font-size: 10px;
+}
 .nav-tabs {
     border-bottom: 0;
 }
@@ -417,11 +452,20 @@ button:focus, button:active {
 .main .left-area .popup-menu {
     position: absolute;
     padding: 5px 10px;
-    width: 200px;
+    width: 100px;
     background: #fff;
     border: 1px solid #E7EEF4;
     z-index: 10;
     display: none;
+}
+
+.main .left-area .popup-menu h6 {
+    cursor: pointer;
+}
+
+.main .left-area .popup-menu h6:hover {
+    cursor: pointer;
+    color: red;
 }
 
 .main .left-area .title {
@@ -560,6 +604,16 @@ button:focus, button:active {
     position: relative;
 }
 
+.main .left-area .group-area .groups .group .checkbox {
+    display: inline-block;
+    margin: 5px 0 0 -40px;
+    float: left;   
+}
+
+.main .left-area .group-area .groups .group .tree-icon {
+    margin-left: 0;
+}
+
 .main .left-area .group-area .groups .group hr {
     margin: 0 -30px;
 }
@@ -601,9 +655,18 @@ button:focus, button:active {
     display: inline-block;
 }
 
+.main .left-area .group-area .groups .group .users .user .left-half .checkbox {
+    display: inline-block;
+    margin-left: -20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .main .left-area .group-area .groups .group .users .user .right-half {
+    display: inline-block;
     width: 40%;
-    float: right;
+    text-align: right;
+    vertical-align: middle;
 }
 
 .main .left-area .group-area .groups .group .users .user span {
@@ -661,7 +724,7 @@ button:focus, button:active {
 }
 
 .main .right-area .bottom-box a {
-    padding: 0 15px 0 0;
+    padding: 0 5px 0 5px;
     cursor: pointer;
 }
 
@@ -747,8 +810,15 @@ button:focus, button:active {
     position: relative;
 }
 
+.main .right-area .option-bar .info {
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}
+
 .main .right-area .option-bar .options {
-    position: absolute;
+    display: inline-block;
+    text-align: right;
     right: 15px;
     top: 0;
     -webkit-touch-callout: none;
@@ -853,6 +923,133 @@ input[type=checkbox], input[type=radio] {
     margin: 0;
 }
 
+#column-modal .columns-container table td {
+    cursor: pointer;
+}
+
+#column-modal .columns-container table td.selected {
+    cursor: pointer;
+    background-color: #eeeeee;
+}
+
 .margin-top-15 {
     margin-top: 15px;
+}
+
+#contextMenu {
+    display:none;
+    position:absolute;
+    margin-bottom:5px;    
+}
+
+#contextMenu .dropdown-menu {
+    display: block;
+}
+
+a.readed, a.readed:hover, a.readed:active {
+    color: #555 !important;
+}
+
+@media screen and (max-width: 1008px) {
+    .main .right-area .option-bar .info {
+        width: 100px;
+    }
+}
+
+#notice-modal .modal-body {
+    height: 250px;
+}
+
+.transfer form {
+    margin-top: 15px;
+    width: 500px;
+}
+.transfer form select {
+    width: 300px;
+}
+
+.jedatebox {
+    z-index: 99999;
+}
+
+.signal {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.signal0 {
+    background-image: url("../img/SIGNAL-0.png");
+}
+
+.signal1 {
+    background-image: url("../img/SIGNAL-1.png");
+}
+.signal2{
+    background-image: url("../img/SIGNAL-2.png");
+}
+.signal3{
+    background-image: url("../img/SIGNAL-3.png");
+}
+.signal4 {
+    background-image: url("../img/SIGNAL-4.png");
+}
+.signal5 {
+    background-image: url("../img/SIGNAL-5.png");
+}
+
+.power {
+    width:18px;
+    height:12px;
+    border: #000000 1px solid;
+    margin: 5px 0 0 5px;
+}
+.power-value{ 
+    width:50%;
+    height:8px;
+    background:#3b4345;
+    margin-top: .5px;
+}
+.top{ 
+    width:2px;
+    height:7px;
+    background:#6a797c;
+    margin-top:7px;
+}
+
+#select2-search-customer-results {
+    list-style-position: inside;
+}
+
+#select2-search-customer-results li {
+    list-style-image: url('../img/doc.gif');
+    padding-left: 15px;
+}
+
+#select2-search-customer-results li[id*='天易根客户'] {
+    cursor: pointer;
+    list-style-image: url('../img/opened.png');
+    padding-left: 0;
+}
+
+#select2-search-customer-results li.closed {
+    cursor: pointer;
+    list-style-image: url('../img/closed.png');
+    padding-left: 0;
+}
+
+#select2-search-customer1-results, #select2-search-customer1-results ul {
+    list-style-position: inside;
+}
+
+#select2-search-customer1-results li {
+    list-style-image: url('../img/doc.gif');
+}
+
+
+#select2-search-customer1-results li[role="group"] {
+    list-style-image: url('../img/opened.png');
 }
