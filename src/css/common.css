@@ -1068,7 +1068,7 @@ label {
 .select2-results__option .select2-results__group:hover {
     color: #fff;
     background-color: #5897fb;
-    cursor: default;
+    cursor: pointer;
 }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
