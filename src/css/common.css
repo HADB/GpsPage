@@ -1049,15 +1049,15 @@ a.readed, a.readed:hover, a.readed:active {
     padding-left: 0;
 }
 
-#select2-search-customer1-results, #select2-search-customer1-results ul {
+.select2-results, .select2-results ul {
     list-style-position: inside;
 }
 
-#select2-search-customer1-results li {
+.select2-results li {
     list-style-image: url('../img/doc.gif');
 }
 
-#select2-search-customer1-results li[role="group"] {
+.select2-results li[role="group"] {
     list-style-image: url('../img/opened.png');
 }
 

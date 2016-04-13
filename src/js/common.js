@@ -431,31 +431,8 @@ $(function () {
         $(this).parents("tr").remove();
     });
 
-    $("#search-customer").on("select2:selecting", function (e) {
-        var $this = $(".select2-results__option--highlighted");
-        if ($this.text().indexOf("天易根客户") !== -1) {
-            if ($this.hasClass('closed')) {
-                $this.removeClass('closed');
-                $this.nextAll("li").each(function () {
-                    if ($(this).text().indexOf("天易根客户") === -1) {
-                        $(this).show();
-                    } else {
-                        return false;
-                    }
-                })
-            } else {
-                $this.addClass('closed');
-                $this.nextAll("li").each(function () {
-                    if ($(this).text().indexOf("天易根客户") === -1) {
-                        $(this).hide();
-                    } else {
-                        return false;
-                    }
-                })
-            }
-            e.stopPropagation();
-            return false;
-        }
+    $('body').on('click', '.select2-results__option .select2-results__group', function () {
+        $(this).siblings().slideToggle(150);
     });
 
     $("#alarm").click(function () {
@@ -484,8 +461,9 @@ $(function () {
 
         renderMap("signal" + signal, false);
 
-        $("#search-customer").select2();
         $("#search-customer1").select2();
+        $("#search-customer2").select2();
+
         jeDate.skin("gray");
         jeDate({
             dateCell: ".datepicker-control",
