@@ -127,10 +127,12 @@ $(function () {
     });
 
     $('.groups .group .group-actions .delete').click(function () {
-        $(this).closest('.group').slideUp(150, function () {
-            $('#message-modal .modal-body').html('删除成功！');
-            $('#message-modal').modal();
-        });
+        if (confirm('确认删除吗？')) {
+            $(this).closest('.group').slideUp(150, function () {
+                $('#message-modal .modal-body').html('删除成功！');
+                $('#message-modal').modal();
+            });
+        }
     });
 
     $('.groups .group .group-actions .edit').click(function () {
@@ -235,14 +237,19 @@ $(function () {
     });
 
     $('.hide-left').click(function () {
+        var hide = $('.hide-left').find('i').hasClass('fa-angle-left');
+        toggleLeftArea(hide);
+    });
+
+    function toggleLeftArea(hide) {
         var $table = $('.bottom-box table');
-        if ($(this).find('i').hasClass('fa-angle-left')) {
+        if (hide) {
             $('.left-area').animate({left: '-300px'}, 100);
             $('.right-area').animate({'padding-left': '15px'}, 100);
             $('.hide-left').animate({'left': '5px'}, 100);
             $('.option-bar-container').animate({'padding-left': '30px'}, 100);
-            $(this).find('i').addClass('fa-angle-right');
-            $(this).find('i').removeClass('fa-angle-left');
+            $('.hide-left').find('i').addClass('fa-angle-right');
+            $('.hide-left').find('i').removeClass('fa-angle-left');
             $('.bottom-box .panel-body').scrollTop(0);
             $table.floatThead('destroy');
             $('.bottom-box').animate({'padding-left': '10px'}, 100);
@@ -252,14 +259,14 @@ $(function () {
             $('.right-area').animate({'padding-left': '285px'}, 100);
             $('.hide-left').animate({'left': '275px'}, 100);
             $('.option-bar-container').animate({'padding-left': '300px'}, 100);
-            $(this).find('i').addClass('fa-angle-left');
-            $(this).find('i').removeClass('fa-angle-right');
+            $('.hide-left').find('i').addClass('fa-angle-left');
+            $('.hide-left').find('i').removeClass('fa-angle-right');
             $('.bottom-box').animate({'padding-left': '285px'}, 100, 'swing', function () {
                 $('.bottom-box .panel-body').scrollTop(0);
                 $table.floatThead();
             });
         }
-    });
+    }
 
     $('.map-selection').click(function () {
         $(this).find('.dropdown-menu').slideToggle(150);
@@ -327,16 +334,14 @@ $(function () {
             $(".header").hide();
             $(".navbar").hide();
             $(".main").css("padding-top", "0");
-            var $hideLeftAreaButton = $(".hide-left");
-            if ($hideLeftAreaButton.find('i').hasClass('fa-angle-left')) {
-                $hideLeftAreaButton.click();
-            }
+            toggleLeftArea(true);
             $(".bottom-box").hide();
             //renderMap();
         } else {
             $(".main").css("padding-top", "130px");
             $(".header").show();
             $(".navbar").show();
+            toggleLeftArea(false);
             $(".bottom-box").show();
         }
     });
